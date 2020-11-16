@@ -4,8 +4,6 @@
 
 ## Getting Started
 
-
-
 ### 介绍
 
 > 多姿的青春，迷茫的青春，懵懂的青春，落泪的青春，责任的青春，青春的婀娜，青春的美妙全部撒播在了沿途的风景之中，迷茫，酸楚，欢声笑语在记忆的天空中承载着[梦想](https://www.lz13.cn/mingrenmingyan/4956.html)而飞翔，青春才成了心中的永恒
@@ -197,7 +195,33 @@ final onGenerateRoute = (settings) {
 
 #### 观察者
 
+页面跳转添加观察者，能获取用户行为数据（GLObserver）
 
+
+
+```
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      localeResolutionCallback:
+          (Locale locale, Iterable<Locale> supportedLocales) {
+        //print("change language");
+        return locale;
+      },
+      navigatorKey: Application.globalKey,
+
+      /// 这个routes 不能写  如果写了的话 就不能传递参数
+//      routes: routes,
+      /// 这个既可以传递参数 也可以不传递参数 用这一个就够了 无须用这个routes
+      onGenerateRoute: onGenerateRoute,
+      navigatorObservers: [
+        /// 路由监听  作用：对用户行为流的埋点监测
+        GLObserver()
+      ],
+      home: MyHomePage(),
+    );
+  }
+```
 
 ### Dio相关
 
@@ -568,11 +592,17 @@ IUpdateViewManager.instance.unRegistIUpdateView(NoticeAction.action1);
 
 4. 错误日志上报  详见main.dart
 
-5. 由于复杂的页面交互，那么通知也是少不了的，一个页面的某个行为会影响上个页面的展现内容或者刷新数据，那么 这里我们定义了2中方式：1.Provider 2.IupdateViewManager 大家可以任选其一即可
+5. 由于复杂的页面交互，那么通知也是少不了的，一个页面的某个行为会影响上个页面的展现内容或者刷新数据，那么 这里小编定义了2中方式：1.Provider 2.IupdateViewManager 大家可以任选其一即可
 
 6. 基于SmartRefresher刷新封装的CustomerSmartRefresh 
 
-   最后总结，本文
+   最后,代码已上传github , 欢迎下载阅读
+
+   [https://github.com/zhengxiangke/ProjectConstruction](https://github.com/zhengxiangke/ProjectConstruction)
+
+
+
+
 
 
 
