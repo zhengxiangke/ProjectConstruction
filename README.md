@@ -599,8 +599,6 @@ IUpdateViewManager.instance.unRegistIUpdateView(NoticeAction.action1);
    最后,代码已上传github , 欢迎下载阅读
     如有疑问 加小编微信 a15757831766 小编还有个flutter技术交流群
 
-   [https://github.com/zhengxiangke/ProjectConstruction](https://github.com/zhengxiangke/ProjectConstruction)
-
 
 
 
