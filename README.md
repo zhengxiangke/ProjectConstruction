@@ -597,7 +597,7 @@ IUpdateViewManager.instance.unRegistIUpdateView(NoticeAction.action1);
 6. 基于SmartRefresher刷新封装的CustomerSmartRefresh 
 
    最后,代码已上传github , 欢迎下载阅读
-    如有疑问 加小编微信 a15757831766 小编还有个flutter技术交流群
+    如有疑问 加QQ群 883130953
 
 
 
